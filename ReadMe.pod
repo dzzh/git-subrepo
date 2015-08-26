@@ -106,7 +106,7 @@ The C<git-subrepo> command benefits these roles in the following ways:
 
 The best short answer is:
 
-    git clone https://github.com/ingydotnet/git-subrepo /path/to/git-subrepo
+    git clone https://github.com/dzzh/git-subrepo /path/to/git-subrepo
     echo 'source /path/to/git-subrepo/init' >> ~/.bashrc
 
 The complete "Installation Instructions" can be found below.
@@ -377,7 +377,7 @@ all commands.
 There are currently 3 ways to install C<git-subrepo>. For all of them you need
 to get the source code from GitHub:
 
-    git clone https://github.com/ingydotnet/git-subrepo /path/to/git-subrepo
+    git clone https://github.com/dzzh/git-subrepo /path/to/git-subrepo
 
 The first installation method is preferred: C<source> the C<init> file. Just
 add a line like this one to your shell startup script:
