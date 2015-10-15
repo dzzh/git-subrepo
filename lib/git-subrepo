@@ -617,6 +617,10 @@ subrepo:branch() {
     --subdirectory-filter "$subdir" \
     HEAD
 
+  o "Remove the .gitrepo file from the history."
+  RUN git filter-branch -f \
+    --tree-filter "rm -f .gitrepo" --prune-empty
+
   o "Make sure there are *subrepo* commits after the last pull."
   local count="$(git rev-list HEAD -2 | grep -c $'\n')"
   if [ "$count" != 2 ]; then
@@ -624,10 +628,6 @@ subrepo:branch() {
     RUN git reset --hard "$original_head_commit"
     OK=false; CODE=-2; return
   fi
-
-  o "Remove the .gitrepo file from the history."
-  RUN git filter-branch -f \
-    --tree-filter "rm -f .gitrepo" --prune-empty
 
   o "Find the previous pull commit to use as a base revision for the local changes"
   local prev_pull_commit="$(git rev-list --first-parent HEAD | tail -1)"
