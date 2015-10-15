@@ -11,6 +11,8 @@ See http://github.com/ingydotnet/swim-pm#readme
 git-subrepo(1) - Git Submodule Alternative
 
 =for html
+<p><font color="red">Beware that this fork is currently not compatible with ingydotnet/git-subrepo. <br\>
+It uses a slightly different format of .gitrepo file, no automatic migration is supported by now.</font></p>
 <a href="https://travis-ci.org/ingydotnet/git-subrepo"><img src="https://travis-ci.org/ingydotnet/git-subrepo.png" alt="git-subrepo"></a>
 
 =head1 Synopsis
