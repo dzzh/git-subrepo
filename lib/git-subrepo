@@ -640,9 +640,8 @@ subrepo:branch() {
   RUN git branch "$cherry_branch"
 
   o "Prepare the commit message for a squashed cherry-pick commit"
-  local second_oldest_revision="$(git rev-list "$cherry_branch" --first-parent | tail -n 2 | head -n 1)"
   local commit_message="git-subrepo cherry-pick of the following commits:"$'\n\n'
-  commit_message+="$(git log "$cherry_branch" --first-parent "$second_oldest_revision"..HEAD)"
+  commit_message+="$(git log "$cherry_branch" --first-parent)"
 
   o "Squash all changes since the last pull into one commit"
   RUN git reset --hard "$prev_pull_commit"
